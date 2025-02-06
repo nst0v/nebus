@@ -174,4 +174,4 @@
         </div>
     </body>
 </html>
-<?php /**PATH /home/nikita/nebus/nebus-test-app/resources/views/welcome.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/resources/views/welcome.blade.php ENDPATH**/ ?>

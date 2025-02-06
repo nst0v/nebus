@@ -1,66 +1,95 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# README.md
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Laravel Docker Project
 
-## About Laravel
+Этот проект представляет собой приложение на Laravel, завернутое в Docker. Он включает в себя автоматическое создание и миграцию базы данных, а также настройку документации Swagger.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Структура проекта
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **app/**: Директория для основного кода приложения.
+  - **Http/**: Контроллеры и промежуточное ПО.
+    - **Controllers/**: Контроллеры для обработки HTTP-запросов.
+    - **Middleware/**: Промежуточное ПО для обработки запросов.
+  - **Models/**: Модели данных.
+  - **Providers/**: Сервис-провайдеры.
+  - **Repositories/**: Репозитории для работы с данными.
+  - **Services/**: Сервисы для бизнес-логики.
+  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **bootstrap/**: Файлы для загрузки приложения.
 
-## Learning Laravel
+- **config/**: Конфигурационные файлы приложения.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **database/**: Директория для работы с базой данных.
+  - **factories/**: Фабрики для создания тестовых данных.
+  - **migrations/**: Миграции базы данных.
+  - **seeders/**: Сидеры для заполнения базы данных начальными данными.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **docker/**: Конфигурация Docker.
+  - **nginx/**: Конфигурация Nginx.
+  - **php/**: Dockerfile для PHP.
+  - **postgres/**: Dockerfile для PostgreSQL.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **public/**: Публичные файлы приложения.
 
-## Laravel Sponsors
+- **resources/**: Ресурсы приложения.
+  - **js/**: JavaScript файлы.
+  - **lang/**: Языковые файлы.
+  - **sass/**: Файлы стилей SASS.
+  - **views/**: Шаблоны представлений.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **routes/**: Определение маршрутов.
+  - **api.php**: Маршруты API.
+  - **channels.php**: Маршруты каналов.
+  - **console.php**: Консольные маршруты.
+  - **web.php**: Веб-маршруты.
 
-### Premium Partners
+- **storage/**: Хранение файлов приложения.
+  - **app/**: Файлы приложения.
+  - **framework/**: Файлы фреймворка.
+  - **logs/**: Логи приложения.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **tests/**: Тесты приложения.
+  - **Feature/**: Функциональные тесты.
+  - **Unit/**: Юнит-тесты.
 
-## Contributing
+- **.env**: Файл окружения с конфигурацией приложения.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **.env.example**: Пример файла окружения.
 
-## Code of Conduct
+- **.gitignore**: Файл для игнорирования файлов в системе контроля версий.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **composer.json**: Конфигурация зависимостей проекта.
 
-## Security Vulnerabilities
+- **composer.lock**: Файл блокировки зависимостей.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **docker-compose.yml**: Настройка многоконтейнерного Docker приложения.
 
-## License
+- **package.json**: Конфигурация npm.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **phpunit.xml**: Конфигурация для PHPUnit.
+
+- **artisan**: Консольный интерфейс Laravel.
+
+## Установка
+
+1. Клонируйте репозиторий:
+   ```
+   git clone https://github.com/nst0v/nebus
+   ```
+
+2. Перейдите в директорию проекта:
+   ```
+   cd laravel-docker-project
+   ```
+
+3. Запустите setup.sh:
+   ```
+   ./setup.sh
+   ```
+  
+## Документация Swagger
+
+Документация API доступна по адресу `/api/documentation`.
+
+API ключ можете найти в файле `.env` (`API_KEY=...`).

@@ -162,4 +162,4 @@
 </script>
 </body>
 </html>
-<?php /**PATH /home/nikita/nebus/nebus-test-app/resources/views/vendor/l5-swagger/index.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/resources/views/vendor/l5-swagger/index.blade.php ENDPATH**/ ?>
