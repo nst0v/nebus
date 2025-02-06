@@ -1,6 +1,4 @@
-# README.md
-
-# Laravel Docker Project
+# Laravel Nebus Project
 
 Этот проект представляет собой приложение на Laravel, завернутое в Docker. Он включает в себя автоматическое создание и миграцию базы данных, а также настройку документации Swagger.
 
@@ -80,7 +78,7 @@
 
 2. Перейдите в директорию проекта:
    ```
-   cd laravel-docker-project
+   cd nebus-test-app
    ```
 
 3. Запустите setup.sh:
