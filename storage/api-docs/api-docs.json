@@ -1,0 +1,247 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Nebus API Test task",
+        "description": "API для работы с организациями",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/buildings/{buildingId}/organizations": {
+            "get": {
+                "summary": "Список всех организаций находящихся в конкретном здании",
+                "operationId": "6861457701dd44488d8e56760ff79db9",
+                "parameters": [
+                    {
+                        "name": "buildingId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Список организаций в здании"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/organizations/{id}": {
+            "get": {
+                "summary": "Вывод информации об организации по её идентификатору",
+                "operationId": "ce998513f1fb6e0f811b69b7cb192cd3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Сведения об организации"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/organizations/search/name/{name}": {
+            "get": {
+                "summary": "Поиск организации по названию",
+                "operationId": "a7db2e3db828acd1af4f9adc26c97ab4",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Список найденных организаций"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/organizations/search/activity/id/{activityId}": {
+            "get": {
+                "summary": "Поиск организаций по ID деятельности",
+                "operationId": "64cb70cb99352c3570a18813cc9e1cb4",
+                "parameters": [
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Список организаций с указанной деятельностью"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/organizations/search/activity/name/{activityName}": {
+            "get": {
+                "summary": "Искать организации по виду деятельности. Например, поиск по виду деятельности «Еда»",
+                "operationId": "79b755326771eeb3bc405d4557fa30ca",
+                "parameters": [
+                    {
+                        "name": "activityName",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Список организаций с указанным названием деятельности"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/organizations/area/rectangle/{minLat}/{maxLat}/{minLng}/{maxLng}": {
+            "get": {
+                "summary": "Список организаций, которые находятся в заданной прямоугольной области относительно указанной точки на карте. список зданий",
+                "operationId": "4f1d6f1bb724dc7c8f5cb4f5719e51ee",
+                "parameters": [
+                    {
+                        "name": "minLat",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    {
+                        "name": "maxLat",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    {
+                        "name": "minLng",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    {
+                        "name": "maxLng",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Список организаций в прямоугольной области"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/organizations/area/radius/{latitude}/{longitude}/{radius}": {
+            "get": {
+                "summary": "Список организаций, которые находятся в заданном радиусе относительно указанной точки на карте. список зданий",
+                "operationId": "c633880c33afa223ba5fa4d9720cf501",
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    {
+                        "name": "radius",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Список организаций в радиусе"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "name": "X-API-Key",
+                "in": "header"
+            }
+        }
+    }
+}
